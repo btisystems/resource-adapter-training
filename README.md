@@ -43,7 +43,7 @@ Unzip this file and copy the jar files from the following directories into the m
        resource-adapter-X.x/target/lib/
 
 
-Run the install-to-project-repo.py file, this will take the jars and install in a local directory repository and provide 
+Run this [install-to-project-repo.py](./install-to-project-repo.py) file, this will take the jars and install in a local directory repository and provide 
 the maven dependencies to include in your pom.xml.  
 These get written to a file here [${basedir}/repo/dependencies.txt](./repo/dependencies.txt) for your convenience. 
 
