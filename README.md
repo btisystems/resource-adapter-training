@@ -11,6 +11,7 @@ This training assumes you have configured your machines with the following softw
 
 * [Java 7](http://www.oracle.com/technetwork/java/javase/downloads/index.html) - Make sure this is Java 7!
 * [Maven](http://maven.apache.org/download.cgi) 
+* [Python 2](https://www.python.org/downloads/)
 * IDE of Choice: 
     * [Eclipse download](https://www.eclipse.org/downloads/)
     * [Intellij download](http://www.jetbrains.com/idea/download/)
