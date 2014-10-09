@@ -22,21 +22,21 @@ package com.btisystems.pronx.training;
 
 import com.btisystems.pronx.ems.client.adapter.ResourceAdapter;
 import com.btisystems.pronx.ems.client.adapter.exceptions.ResourceAdapterException;
-import com.btisystems.pronx.ems.schemas.network.NetworkElement;
+import com.btisystems.pronx.ems.schemas.network.Customer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
 
-public class NetworkElementsHelloWorld {
+public class CustomerExample extends CustomerTutorial {
 
-    private static final Logger LOG = LoggerFactory.getLogger(NetworkElementsHelloWorld.class);
+    private static final Logger LOG = LoggerFactory.getLogger(CustomerExample.class);
 
-    public NetworkElementsHelloWorld() {
+    public CustomerExample() {
         try {
             connectToResourceAdapter("172.27.5.230", "admin", "admin");
-            getNetworkElementsSummary();
+            getCustomerSummary();
             closeConnectionToResourceAdapter();
         } catch (ResourceAdapterException ex) {
             LOG.error("Problem with resource adapter.", ex);
@@ -48,20 +48,12 @@ public class NetworkElementsHelloWorld {
         System.exit(0);  // terminating jvm otherwise have to wait on socket timeout
     }
 
-    private void getNetworkElementsSummary() throws ResourceAdapterException {
-        final List<NetworkElement> networkElements = ResourceAdapter.getInstance().getNetworkElementsAdapter().getNetworkElements();
-        LOG.info("PSM Server contains {} network elements.", networkElements.size());
-        for (NetworkElement networkElement : networkElements) {
-            LOG.info("Network element {}, is a {}.", networkElement.getAddress(), networkElement.getType());
-        }
-
-    }
 
     private void connectToResourceAdapter(final String ipAddress, final String username, final String password) throws ResourceAdapterException {
         ResourceAdapter.getInstance().setupAdapter(ipAddress, username, password, null, null);
     }
 
     public static void main(String args[]) {
-        new NetworkElementsHelloWorld();
+        new CustomerExample();
     }
 }
