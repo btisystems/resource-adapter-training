@@ -36,6 +36,7 @@ public class CustomerExample extends CustomerTutorial {
     public CustomerExample() {
         try {
             connectToResourceAdapter("172.27.5.230", "admin", "admin");
+            createCustomerSummary("NewCustomer");
             getCustomerSummary();
             closeConnectionToResourceAdapter();
         } catch (ResourceAdapterException ex) {
@@ -55,5 +56,14 @@ public class CustomerExample extends CustomerTutorial {
 
     public static void main(String args[]) {
         new CustomerExample();
+    }
+
+    @Override
+    void getCustomerSummary() throws ResourceAdapterException {
+        List<Customer> customerList = ResourceAdapter.getInstance().getCustomersAdapter().getCustomers().getCustomer();
+        LOG.info("No of Customers: {}", customerList.size());
+        for (Customer customer : customerList) {
+            LOG.info("Customer: {}", customer.getCompanyName());
+        }
     }
 }

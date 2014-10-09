@@ -1,23 +1,18 @@
-01 Get Customer List
+02 Create Customer 'NewCustomer'
 =========================
 
-This first tutorial demonstrates retrieving and analyzing the provisioned Customers.  
+This second tutorial demonstrates creating a new Customer.  
 
 
 Dependencies
 ----------
 
-To begin, create a Customer on the system using the PSM Client.
-
-* Start up the GUI Client and connect to your server
-* Open the Customer Management feature
-* Add a new Customer
+None
 
 
 Objective
 ----------
 
-Implement the getCustomerSummary() method.  This should retrieve the customer list using the ResourceAdapter and iterate
-through and output the list of Customer names.
+Implement the createCustomerSummary(String companyName) method.  This should use the ResourceAdapter to create a new customer.
 
 

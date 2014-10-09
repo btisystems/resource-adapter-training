@@ -26,4 +26,6 @@ import com.btisystems.pronx.ems.client.adapter.exceptions.ResourceAdapterExcepti
 public abstract class CustomerTutorial {
 
     abstract void getCustomerSummary() throws ResourceAdapterException;
+
+    abstract void createCustomerSummary(String companyName) throws ResourceAdapterException;
 }
