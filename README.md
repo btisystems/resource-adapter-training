@@ -1,7 +1,7 @@
-100 Transport
+200 Optical
 =========================
 
-This section is the start of the Transport section for the Resource Adapter.  
+This section is the start of the Optical section for the Resource Adapter.  
 
 
 Dependencies
