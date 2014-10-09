@@ -15,6 +15,7 @@ This training assumes you have configured your machines with the following softw
     * [Eclipse download](https://www.eclipse.org/downloads/)
     * [Intellij download](http://www.jetbrains.com/idea/download/)
     * [Netbeans download](https://netbeans.org/downloads/) 
+* Resource Adapter v5.2 or later
 
 
 Background
