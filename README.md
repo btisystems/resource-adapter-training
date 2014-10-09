@@ -1,7 +1,7 @@
-200 Optical
+300 Ethernet
 =========================
 
-This section is the start of the Optical section for the Resource Adapter.  
+This section is the start of the Ethernet section for the Resource Adapter.  
 
 
 Dependencies
