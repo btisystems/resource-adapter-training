@@ -58,5 +58,5 @@ the following command
 Start Coding
 ---------------
 
-With your IDE of choice, import this maven project.
+With your IDE of choice, import this maven project, and run the [NetworkElementsHelloWorld](./src/main/java/com/btisystems/pronx/training/NetworkElementsHelloWorld.java) example.
 
