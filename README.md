@@ -21,3 +21,7 @@ Implement the getCustomerSummary() method.  This should retrieve the customer li
 through and output the list of Customer names.
 
 
+Whats next?
+---------------
+
+Tutorial [02 Create Customer 'NewCustomer'](https://github.com/btisystems/resource-adapter-training/tree/02AddCustomer).
