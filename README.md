@@ -1,5 +1,5 @@
-Resource Adapter Training
-=========================
+Resource Adapter Training.
+==========================
 
 Training module for users of the Resource Adapter.  
 
