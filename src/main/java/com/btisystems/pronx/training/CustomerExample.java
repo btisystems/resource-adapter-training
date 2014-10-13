@@ -39,7 +39,7 @@ public class CustomerExample extends CustomerTutorial {
     public CustomerExample() {
         try {
             connectToResourceAdapter("172.27.5.230", "admin", "admin");
-            createCustomerSummary(generateCustomerName());
+            addNewCustomer(generateCustomerName());
             getCustomerSummary();
         } catch (ResourceAdapterException ex) {
             LOG.error("Problem with resource adapter.", ex);

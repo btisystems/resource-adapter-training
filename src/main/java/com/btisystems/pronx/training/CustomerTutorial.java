@@ -27,5 +27,5 @@ public abstract class CustomerTutorial {
 
     abstract void getCustomerSummary() throws ResourceAdapterException;
 
-    abstract void createCustomerSummary(String companyName) throws ResourceAdapterException;
+    abstract void addNewCustomer(String companyName) throws ResourceAdapterException;
 }
