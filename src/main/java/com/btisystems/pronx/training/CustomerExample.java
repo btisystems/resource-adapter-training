@@ -83,6 +83,7 @@ public class CustomerExample extends CustomerTutorial {
 
     @Override
     void addNewCustomer(final String companyName) throws ResourceAdapterException {
+        LOG.info("Add new customer with company-name: {} ... ", companyName);
         final Customer customer = generateCustomer(companyName);
         ResourceAdapter.getInstance().getCustomersAdapter().createCustomer(customer);
     }
@@ -98,5 +99,16 @@ public class CustomerExample extends CustomerTutorial {
                 withCompanyName(companyName).
                 withEmployees(employees);
     }
+    
+    @Override
+    void modifyCustomer(final String companyName) throws ResourceAdapterException {
+        LOG.info("Modify Customer with company-name: {} ...", companyName);
 
+        final Customer customer = generateCustomer(companyName);
+        // Or alternatively ...
+        // final Customer customer = ResourceAdapter.getInstance().getCustomersAdapter().getCustomerByName(companyName);
+
+        customer.setNotes("Some sample notes !");
+        ResourceAdapter.getInstance().getCustomersAdapter().updateCustomer(customer);
+    }
 }
