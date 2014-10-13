@@ -29,8 +29,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
-import java.util.UUID;
-
+import java.util.Calendar;
+import java.text.SimpleDateFormat;
 
 public class CustomerExample extends CustomerTutorial {
 
@@ -53,11 +53,14 @@ public class CustomerExample extends CustomerTutorial {
         System.exit(0);  // terminating jvm otherwise have to wait on socket timeout
     }
 
+    // Normally this would be a user-defined new company name,
+    // which is first validated on client-side to check it is not already used.
+    // Otherwise server responds with a HTTP Error 400 - Bad Request
     private static String generateCustomerName() {
-        // Normally this would be a user-supplied new company name,
-        // which is validated on client-side to check it is not already used.
-        // Otherwise server responds with a HTTP Error 400 - Bad Request
-        return "Cust-" + UUID.randomUUID().toString();
+        String timeStampForUniqueness = new SimpleDateFormat("yy-MM-dd'T'HH:mm:ss").
+                format(Calendar.getInstance().getTime());
+
+        return "Cust-" + timeStampForUniqueness;
     }
 
     private void connectToResourceAdapter(final String ipAddress, final String username, final String password) throws ResourceAdapterException {
