@@ -23,10 +23,13 @@ package com.btisystems.pronx.training;
 import com.btisystems.pronx.ems.client.adapter.ResourceAdapter;
 import com.btisystems.pronx.ems.client.adapter.exceptions.ResourceAdapterException;
 import com.btisystems.pronx.ems.schemas.network.Customer;
+import com.btisystems.pronx.ems.schemas.network.Employee;
+import com.btisystems.pronx.ems.schemas.network.Employees;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
+import java.util.UUID;
 
 
 public class CustomerExample extends CustomerTutorial {
@@ -36,7 +39,7 @@ public class CustomerExample extends CustomerTutorial {
     public CustomerExample() {
         try {
             connectToResourceAdapter("172.27.5.230", "admin", "admin");
-            createCustomerSummary("NewCustomer");
+            createCustomerSummary(generateCustomerName());
             getCustomerSummary();
         } catch (ResourceAdapterException ex) {
             LOG.error("Problem with resource adapter.", ex);
@@ -50,6 +53,12 @@ public class CustomerExample extends CustomerTutorial {
         System.exit(0);  // terminating jvm otherwise have to wait on socket timeout
     }
 
+    private static String generateCustomerName() {
+        // Normally this would be a user-supplied new company name,
+        // which is validated on client-side to check it is not already used.
+        // Otherwise server responds with a HTTP Error 400 - Bad Request
+        return "Cust-" + UUID.randomUUID().toString();
+    }
 
     private void connectToResourceAdapter(final String ipAddress, final String username, final String password) throws ResourceAdapterException {
         ResourceAdapter.getInstance().setupAdapter(ipAddress, username, password, null, null);
@@ -62,9 +71,9 @@ public class CustomerExample extends CustomerTutorial {
     @Override
     void getCustomerSummary() throws ResourceAdapterException {
         List<Customer> customerList = ResourceAdapter.getInstance().getCustomersAdapter().getCustomers().getCustomer();
-        LOG.info("No of Customers: {}", customerList.size());
+        LOG.info("Number of Customers: {}", customerList.size());
         for (Customer customer : customerList) {
-            LOG.info("Customer: {}", customer.getCompanyName());
+            LOG.info("Company Name: {}", customer.getCompanyName());
         }
     }
 }
