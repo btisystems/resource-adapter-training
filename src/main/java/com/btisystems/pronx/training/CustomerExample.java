@@ -43,6 +43,7 @@ public class CustomerExample extends CustomerTutorial {
             addNewCustomer(customerName);
             modifyCustomer(customerName);
             getCustomerSummary();
+            deleteCustomer(customerName);
         } catch (ResourceAdapterException ex) {
             LOG.error("Problem with resource adapter.", ex);
         } finally {

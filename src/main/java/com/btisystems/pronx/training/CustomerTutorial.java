@@ -31,4 +31,6 @@ public abstract class CustomerTutorial {
 
     abstract void modifyCustomer(String companyName) throws ResourceAdapterException;
 
+    abstract void deleteCustomer(String companyName) throws ResourceAdapterException;
+
 }
