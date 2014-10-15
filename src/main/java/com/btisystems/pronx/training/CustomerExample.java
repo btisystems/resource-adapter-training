@@ -112,4 +112,9 @@ public class CustomerExample extends CustomerTutorial {
         customer.setNotes("Some sample notes !");
         ResourceAdapter.getInstance().getCustomersAdapter().updateCustomer(customer);
     }
+    @Override
+    void deleteCustomer(final String companyName) throws ResourceAdapterException {
+        LOG.info("Delete Customer with company-name: {} ...", companyName);
+        ResourceAdapter.getInstance().getCustomersAdapter().deleteCustomer(companyName);
+    }
 }
