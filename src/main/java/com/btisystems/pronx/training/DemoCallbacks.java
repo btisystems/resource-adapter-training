@@ -21,26 +21,12 @@ package com.btisystems.pronx.training;
 import com.btisystems.pronx.ems.client.adapter.ResourceAdapter;
 import com.btisystems.pronx.ems.client.adapter.callbacks.IEventsCallback;
 import com.btisystems.pronx.ems.client.adapter.callbacks.ITasksCallback;
-import com.btisystems.pronx.ems.client.adapter.exceptions.AuthenticationException;
-import com.btisystems.pronx.ems.client.adapter.exceptions.BadRequestException;
-import com.btisystems.pronx.ems.client.adapter.exceptions.ClientMismatchException;
-import com.btisystems.pronx.ems.client.adapter.exceptions.ConnectionException;
-import com.btisystems.pronx.ems.client.adapter.exceptions.MethodNotAllowedException;
-import com.btisystems.pronx.ems.client.adapter.exceptions.NotFoundException;
-import com.btisystems.pronx.ems.client.adapter.exceptions.OtherResourceException;
-import com.btisystems.pronx.ems.client.adapter.exceptions.RequestTimeoutException;
 import com.btisystems.pronx.ems.client.adapter.exceptions.ResourceAdapterException;
-import com.btisystems.pronx.ems.schemas.network.NetworkAlarm;
-import com.btisystems.pronx.ems.schemas.network.NetworkElement;
 import com.btisystems.pronx.ems.schemas.network.NetworkEvent;
-import com.btisystems.pronx.ems.schemas.network.OlFiberList;
-import com.btisystems.pronx.ems.schemas.network.OsSite;
-import com.btisystems.pronx.ems.schemas.network.ShelfList;
 import com.btisystems.pronx.ems.schemas.network.TaskStatus;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.List;
 
 public class DemoCallbacks {
 
